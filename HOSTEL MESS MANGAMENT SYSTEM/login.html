@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login | Hostel Management System</title>
+</head>
+<body>
+
+<h2>Login</h2>
+
+<form id="loginForm">
+
+    <label>Email:</label><br>
+    <input type="email" required><br><br>
+
+    <label>Password:</label><br>
+    <input type="password" required><br><br>
+
+    <label>Login As:</label><br>
+    <select id="role" required>
+        <option value="">-- Select Role --</option>
+        <option value="student">Student</option>
+        <option value="warden">Warden</option>
+        <option value="mess">Mess Admin</option>
+    </select><br><br>
+
+    <button type="submit">Login</button>
+
+</form>
+
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(e) {
+    e.preventDefault();   // page reload rokta hai
+
+    var role = document.getElementById("role").value;
+
+    if (role === "student") {
+        window.location.href = "student-dashboard.html";
+    } 
+    else if (role === "warden") {
+        window.location.href = "warden-dashboard.html";
+    } 
+    else if (role === "mess") {
+        window.location.href = "mess-dashboard.html";
+    } 
+    else {
+        alert("Please select a role");
+    }
+});
+</script>
+
+</body>
+</html>
